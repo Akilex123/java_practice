@@ -4,9 +4,9 @@ package org.example;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Pig myPig = new Pig();
-        myPig.animalSound();
-        myPig.Sleep();
+        Person newPerson = new Person();
+        newPerson.setName("Aleksa");
+        System.out.println(newPerson.getName());
 
     }
 }
