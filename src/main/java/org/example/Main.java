@@ -15,23 +15,32 @@ public class Main {
         Scanner sken = new Scanner(System.in);
 
         // Pravimo varijable koje drze te brojeve
-        System.out.print("Koji je vas prvi broj? ");
-        int prviBroj = sken.nextInt();
-       
-
-
-
-
+        int prviBroj = 0;
+        int drugiBroj = 0;
+        try {
+            System.out.print("Koji je vas prvi broj?: ");
+            prviBroj = sken.nextInt();
+        }
+        catch (InputMismatchException e){
+            System.out.println("Vas unos mora biti broj");
+        }
+        try {
+            System.out.print("Koji je vas drugi broj?: ");
+            drugiBroj = sken.nextInt();
+        }
+        catch (InputMismatchException e){
+            System.out.println("Vas unos mora biti broj");
+        }
+        System.out.println(prviBroj);
+        System.out.println(drugiBroj);
 
         //Pravimo varijablu koja drzi rezultat
-        int rezultat;
+        int rezultat = 0;
 
 
         // Pravimo varijablu koja uzima operator
-
-        // Pravimo Switch koji proverava operator
-
-        // Pravimo matodu za svaku opciju
+        String operator;
+        
 
         }
     }
