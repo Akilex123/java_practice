@@ -20,6 +20,7 @@ public class Main {
         try {
             System.out.print("Koji je vas prvi broj?: ");
             prviBroj = sken.nextInt();
+            sken.nextLine();
         }
         catch (InputMismatchException e){
             System.out.println("Vas unos mora biti broj");
@@ -27,22 +28,38 @@ public class Main {
         try {
             System.out.print("Koji je vas drugi broj?: ");
             drugiBroj = sken.nextInt();
+            sken.nextLine();
         }
         catch (InputMismatchException e){
             System.out.println("Vas unos mora biti broj");
         }
-        System.out.println(prviBroj);
-        System.out.println(drugiBroj);
+
 
         //Pravimo varijablu koja drzi rezultat
-        int rezultat = 0;
+
 
 
         // Pravimo varijablu koja uzima operator
-        String operator;
-        
+        System.out.print("Izaberite vas operator: ");
+        String operator= sken.nextLine();
 
+
+        if (operator.equals("+")){
+            System.out.println(prviBroj + drugiBroj);
+        } else if (operator.equals("-")) {
+            System.out.println(prviBroj - drugiBroj);
         }
+        else if (operator.equals("*")) {
+            System.out.println(prviBroj * drugiBroj);
+        }
+        else if (operator.equals("/")) {
+            if (drugiBroj == 0){
+                System.out.println("Ne mozete deliti sa 0!");
+            }
+            System.out.println(prviBroj / drugiBroj);
+        }
+
+    }
     }
 
 
