@@ -1,4 +1,5 @@
 package org.example;
+import javax.sound.midi.Soundbank;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.HashMap;
@@ -29,6 +30,8 @@ public class Main {
             switch (izbor){
                 case 1 -> dodajProizvod(sken);
                 case 2 -> prikazProizvoda();
+                case 3 -> pronalazenjeProizvoda(sken);
+                case 4 -> System.out.println("Hvala na koriscenju!");
                 default -> System.out.println("Niste uneli dobar broj");
             }
         } while (izbor != 4);
@@ -69,7 +72,13 @@ public class Main {
     }
     // Pronalazenje proizvoda po nazivu
     public static void pronalazenjeProizvoda(Scanner sken){
-        
+        System.out.print("Koji biste proizvod zeleli da nadjete?: ");
+        String naziv = sken.nextLine();
+        if (inventar.containsKey(naziv)){
+            System.out.println(naziv + " " + inventar.get(naziv));
+        } else {
+            System.out.println("Taj proizvod ne postoji");
+        }
     }
 
     }
