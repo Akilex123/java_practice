@@ -28,7 +28,7 @@ public class Main {
         try {
             System.out.print("Koji je vas drugi broj?: ");
             drugiBroj = sken.nextInt();
-            sken.nextLine();
+           
         }
         catch (InputMismatchException e){
             System.out.println("Vas unos mora biti broj");
