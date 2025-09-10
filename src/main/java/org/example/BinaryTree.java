@@ -18,27 +18,14 @@ class TreeNode {
      }
  }
 class Solution {
-    public List<Integer> rightSideView(TreeNode root) {
-        List<Integer> result = new ArrayList<>();
-        if (root == null){
-            return result;
+    public TreeNode searchBST(TreeNode root, int val) {
+        if (root == null) return null;
+        if (root.val == val) return root;
+        if (val < root.val) {
+            return searchBST(root.left,val);
         }
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.add(root);
-        while (!queue.isEmpty()){
-            TreeNode curNode = null;
-            int size = queue.size();
-            for (int i=0; i<size; i++){
-                curNode = queue.poll();
-                if (curNode.left != null){
-                    queue.add(curNode.left);
-                }
-                if (curNode.right != null){
-                    queue.add(curNode.right);
-                }
-            }
-            result.add(curNode.val);
+        else {
+            return searchBST(root.right,val);
         }
-        return result;
     }
 }
