@@ -18,23 +18,20 @@ class TreeNode {
      }
  }
 class Solution {
-    public int[] productExceptSelf(int[] nums) {
-        int[] left = new int [nums.length];
-        int[] right = new int[nums.length];
-
-        left[0] = 1;
-        for (int i=1; i<nums.length; i++){
-            left[i] = left[i-1] * nums[i-1];
+    public boolean increasingTriplet(int[] nums) {
+        int first = Integer.MAX_VALUE;
+        int second = Integer.MAX_VALUE;
+        for (int i = 0; i<nums.length; i++){
+            if (nums[i]<=first){
+                first = nums[i];
+            } else if (nums[i]<=second) {
+                second = nums[i];
+            }
+            else {
+                return true;
+            }
         }
-        right[nums.length - 1] = 1;
-        for (int i=nums.length-2; i>-1; i--){
-            right[i]=right[i+1]*nums[i+1];
-        }
-        int[] ans = new int[nums.length];
-        for (int i=0; i<nums.length; i++){
-            ans[i] = left[i] * right[i];
-        }
-        return ans;
+        return false;
     }
 }
 
