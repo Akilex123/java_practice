@@ -18,19 +18,14 @@ class TreeNode {
      }
  }
 class Solution {
-    public int tribonacci(int n) {
-        if (n<3) return n==0 ? 0:1;
-        int a = 0;
-        int b = 1;
-        int c  = 1;
-        int sum;
-        for (int i = 3; i<=n; i++){
-            sum = a + b + c;
-            a = b;
-            b = c;
-            c = sum;
+    public int minCostClimbingStairs(int[] cost) {
+        int n = cost.length;
+        int[] minCost = new int[n+1];
+        for (int i = 2; i<=n; i++){
+            minCost[i] = Math.min((cost[i-1] + minCost[i-1]),
+                    (cost[i-2] + minCost[i-2]));
         }
-        return c;
+        return minCost[n];
     }
 }
 
